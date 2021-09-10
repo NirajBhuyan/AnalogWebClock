@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+*, ::after, ::before {
+    font-family: 'Architects Daughter', cursive;
+    box-sizing: border-box;
+    font-size: 30px;
+}
+
+body {
+    background: linear-gradient(to right, hsl(200, 100%, 50%),
+     hsl(175, 100%, 50%));
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+     overflow: hidden;
+}
+
+.clock {
+    width: 600px;
+    height: 600px;
+    background-color: rgba(250, 250, 250, .8);
+    border-radius: 50%;
+    border: 4px solid brown;
+    position: relative;
+}
+.bg-image{
+    background-image: url(./image/pexels-jose-aragones-2123375.jpg);
+    background-size: cover;
+    background-position:center;
+}
+
+.clock .number {
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    transform: rotate(var(--rotation));
+    color: rgb(600, 400, 900);
+}
+
+.clock .number1 { --rotation: 30deg; }
+.clock .number2 { --rotation: 60deg; }
+.clock .number3 { --rotation: 90deg; }
+.clock .number4 { --rotation: 120deg; }
+.clock .number5 { --rotation: 150deg; }
+.clock .number6 { --rotation: 180deg; }
+.clock .number7 { --rotation: 210deg; }
+.clock .number8 { --rotation: 240deg; }
+.clock .number9 { --rotation: 270deg; } 
+.clock .number10 { --rotation: 300deg; }
+.clock .number11 { --rotation: 330deg; }
+
+.clock .hand{
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    transform-origin: bottom;
+    z-index: 10;
+    background-color: black;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after{
+    content: '';
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock .hand.second{
+    width: 3.5px;
+    height: 42%;
+    background-color: red;
+}
+
+.clock .hand.minute{
+    width: 7px;
+    height: 40%;
+}
+
+.clock .hand.hour{
+    width: 10px;
+    height: 33%;
+}
